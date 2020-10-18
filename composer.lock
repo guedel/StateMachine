@@ -1,0 +1,55 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e48ea9cf462689b26f6ac1f78e54086d",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "guedel/microtest",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/guedel87/microtest.git",
+                "reference": "10d0071f8c42bfc81aa1d11d9868a6e0dc502677"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/guedel87%2Fmicrotest/repository/archive.zip?sha=10d0071f8c42bfc81aa1d11d9868a6e0dc502677",
+                "reference": "10d0071f8c42bfc81aa1d11d9868a6e0dc502677",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "guedel\\Microtest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "guedel",
+                    "email": "guedel87@live.fr"
+                }
+            ],
+            "description": "Unit test micro framework",
+            "time": "2019-01-24T11:18:20+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

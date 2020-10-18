@@ -1,0 +1,20 @@
+{
+    "name": "guedel/state-machine",
+    "type": "library",
+	"description": "Creation and execution of a state machine based on Grafcet level 2",
+    "license": "MIT",
+    "authors": [
+        {
+			"name": "Guedel",
+			"email": "guedel87@live.fr"
+		}
+    ],
+    "minimum-stability": "dev",
+	"autoload": {
+		"psr-4": { "guedel\\StateMachine\\": "src/" } 
+	},
+    "require": {},
+    "require-dev": {
+        "guedel/microtest": "*"
+    }
+}
