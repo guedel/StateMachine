@@ -3,6 +3,7 @@
     "type": "library",
 	"description": "Creation and execution of a state machine based on Grafcet level 2",
     "license": "MIT",
+    "version": "0.1",
     "authors": [
         {
 			"name": "Guedel",
