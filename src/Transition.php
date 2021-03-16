@@ -8,7 +8,7 @@
    *
    *
    */
-  namespace guedel\StateMachine;
+  namespace Guedel\StateMachine;
 
   if (!defined('ACTIVATE_ALL_STATES_BEFORE')) {
     define('ACTIVATE_ALL_STATES_BEFORE', 0);

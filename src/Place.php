@@ -8,7 +8,7 @@
    *
    *
    */
-  namespace guedel\StateMachine;
+  namespace Guedel\StateMachine;
 
   /**
    * Description of State
@@ -18,11 +18,9 @@
   class Place
   {
     public $name;
-    private $initial = false;
-    private $state = false;
-    private $prevState = false;
-    private $repeat = null;
-    private $count = 0;
+    private $initial = 0;
+    private $state = 0;
+    private $prevState = 0;
 
     public function __construct(string $name, bool $initial = false)
     {
@@ -64,20 +62,6 @@
 
     public function __toString()
     {
-      /*
-      $ret = "Place: " . $this->name;
-      if ($this->initial) {
-        $ret .= ", Initial";
-      }
-      if ($this->state) {
-        $ret .= ", actif";
-      }
-      if ($this->prevState) {
-        $ret .= ", fut actif";
-      }
-      return $ret;
-    }
-    */
       if ($this->state) {
         return "[$this->name:$this->state]";
       }

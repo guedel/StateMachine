@@ -8,7 +8,7 @@
    *
    *
    */
-  namespace guedel\StateMachine;
+  namespace Guedel\StateMachine;
 
   /**
    * Description of Places

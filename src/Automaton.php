@@ -9,7 +9,7 @@
    *
    */
 
-   namespace guedel\StateMachine;
+   namespace Guedel\StateMachine;
 
   if (!defined('ACTIVATE_ALL_STATES_BEFORE')) {
     define('ACTIVATE_ALL_STATES_BEFORE', 0);
@@ -310,6 +310,20 @@
       return $this;
     }
 
+    /**
+     * Ajoute des arcs après une transtion
+     * @param string $transitionName
+     * @param array $places
+     * @return \Guedel\StateMachine\Automaton
+     */
+    public function addArcsPre(string $transitionName, array $places): Automaton
+    {
+      foreach ($places as $place) {
+        $this->addArcPre($place, $transitionName);
+      }
+      return $this;
+    }
+
     public function removeArcPre(string $placeName, string $transitionName)
     {
       if ( isset($this->transitions[$transitionName])) {
@@ -334,6 +348,20 @@
         $tr = $this->transitions[$transitionName];
       }
       $tr->after($place);
+      return $this;
+    }
+
+    /**
+     * Ajout des arcs après une transition
+     * @param string $transitionName
+     * @param array $places
+     * @return \Guedel\StateMachine\Automaton
+     */
+    public function addArcsPost(string $transitionName, array $places): Automaton
+    {
+      foreach ($places as $place) {
+        $this->addArcPost($transitionName, $place);
+      }
       return $this;
     }
 

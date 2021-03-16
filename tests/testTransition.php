@@ -11,12 +11,12 @@
 
 require "bootstrap.php";
 
-use guedel\Microtest\Assert;
-use guedel\Microtest\UnitTest;
-use guedel\StateMachine\IAutomatonVisitor;
-use guedel\StateMachine\Transition;
-use guedel\StateMachine\Places;
-use guedel\StateMachine\Place;
+use Guedel\Microtest\Assert;
+use Guedel\Microtest\UnitTest;
+use Guedel\StateMachine\IAutomatonVisitor;
+use Guedel\StateMachine\Transition;
+use Guedel\StateMachine\Places;
+use Guedel\StateMachine\Place;
 
 $ut = new UnitTest();
 $ut->setTitle("Test de la classe Transition");

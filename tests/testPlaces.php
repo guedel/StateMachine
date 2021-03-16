@@ -11,9 +11,9 @@
 
 require "bootstrap.php";
 
-use guedel\Microtest\Assert;
-use guedel\Microtest\UnitTest;
-use guedel\StateMachine\Places;
+use Guedel\Microtest\Assert;
+use Guedel\Microtest\UnitTest;
+use Guedel\StateMachine\Places;
 
 $ut = new UnitTest();
 $ut->setTitle("Test de la classe Places");

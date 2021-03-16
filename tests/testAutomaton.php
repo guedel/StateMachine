@@ -11,10 +11,10 @@
 
 require "bootstrap.php";
 
-use guedel\Microtest\Assert;
-use guedel\StateMachine\Automaton;
-use guedel\StateMachine\Place;
-use guedel\StateMachine\Transition;
+use Guedel\Microtest\Assert;
+use Guedel\StateMachine\Automaton;
+use Guedel\StateMachine\Place;
+use Guedel\StateMachine\Transition;
 
 $ut = new guedel\Microtest\UnitTest();
 $sm = null;

@@ -11,8 +11,8 @@
 
   require "bootstrap.php";
 
-  use guedel\Microtest\Assert;
-  use guedel\Microtest\UnitTest;
+  use Guedel\Microtest\Assert;
+  use Guedel\Microtest\UnitTest;
 
   class CsvReader implements IAutomatonVisitor
   {

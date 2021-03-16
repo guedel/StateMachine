@@ -1,0 +1,111 @@
+@startuml Diagramme de classes
+
+entity Memo {
+  - private
+  # protected
+  ~ package private 
+  + public
+}
+remove Memo
+
+class Place {
+  + name : string 
+  - initial : int = 0
+  - state : int = 0
+  - prevState : int = 0
+
+  + <<create>> init(name: string, initial: bool)
+  + isActive(): bool
+  + reset()
+  + saveState()
+}
+
+class Transition {
+  - name: string
+  - priority: int = 0
+  + <<create>> init(name: string, priority: int = 0)
+  + getName(): string
+  + isActivable(): bool
+  + completed(): bool
+  + deactivate()
+  + structuralConflict(otherTranstion : Transition): bool
+  + effectiveConflict(otherTranstion : Transition): bool
+  + addBefore(Place)
+  + addNext(Place)
+
+}
+
+class Automaton {
+  - addTransition(Transition)
+  - addPlace(Place)
+  - addArcPre(Place, Transition)
+  - addArcPost(Transition, Place)
+  - addArc(Place, Transition, Place)
+  - removeTansition(transitionName: string)
+  - removePlace(placeName: string)
+}
+
+Transition o-> "prev 0..*" Place
+Transition o-> "next 0..*" Place
+
+class AutomatonEngine {
+  + reset()
+  + step()
+}
+
+AutomatonEngine o-> "automaton" Automaton
+
+Automaton *--> "places *" Place
+Automaton *--> "transitions *" Transition
+
+namespace Visitor {
+  interface IAutomatonVisitor {
+    + eval(Transition): bool
+    + call(Place)
+    + enter(Place)
+    + leave(Place)
+  }
+
+
+  class VisitableTansition {
+    + accept(IAutomatonVisitor)
+  }
+
+  .Transition <|-- VisitableTansition
+}
+
+namespace Listener {
+  abstract class AutomatonSender {
+    + registerListener(AutomatonListener)
+    + unregisterListener(AutomatonListener)
+
+    + sendOnCall(Place)
+    + sendOnEnter(Place)
+    + sendOnLeave(Place)
+  }
+
+  AutomatonSender --- AutomatonListener
+
+  class AutomatonListener {
+    + onCallPlace(Place)
+    + onEnterPlace(Place)
+    + onLeavePlace(Place)
+  }
+}
+
+remove Listener
+remove Visitor
+
+namespace Controller {
+  class Controller {
+    + getInitial(): .Place[]
+    + getNextOfPlace(.Place): .Transition[]
+    + getNextOfTransition(.Transition): .Place[]
+    + test*(): bool
+    + enter*()
+    + call*()
+    + leave*()
+  }
+}
+
+@enduml
